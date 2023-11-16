@@ -9,7 +9,7 @@ from .. import db
 
 
 @main.route('/')
-def index():
+def home():
     return render_template('home.html')
 
 @main.route('/main')
