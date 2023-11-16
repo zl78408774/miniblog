@@ -10,6 +10,10 @@ from .. import db
 
 @main.route('/')
 def index():
+    return render_template('home.html')
+
+@main.route('/main')
+def index():
     BlogView.add_view(db)
     page = request.args.get('page', 1, type=int)
     pagination = Article.query.order_by(Article.create_time.desc()).paginate(
